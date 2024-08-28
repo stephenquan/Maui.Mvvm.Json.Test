@@ -15,39 +15,29 @@ public partial class MainPage : ContentPage
     public void LoadFromJson(string json)
     {
         People.Clear();
-
         List<Person>? people = JsonSerializer.Deserialize<List<Person>>(json);
-        if (people == null)
+        if (people is not null)
         {
-            return;
-        }
-
-        foreach (Person person in people)
-        {
-            People.Add(person);
+            people.ForEach(p => People.Add(p));
         }
     }
 
     private void OnFlintstones(object sender, EventArgs e)
     {
         LoadFromJson("""
-            [
-                { "f": "Fred", "n": "Flintstone" },
-                { "f": "Wilma", "n": "Flintstone" },
-                { "f": "Pebbles", "n": "Flintstone" }
-            ]
+            [ { "f": "Fred", "n": "Flintstone" },
+              { "f": "Wilma", "n": "Flintstone" },
+              { "f": "Pebbles", "n": "Flintstone" } ]
 """);
     }
 
     private void OnBluey(object sender, EventArgs e)
     {
         LoadFromJson("""
-            [
-                { "f": "Bandit", "n": "Heeler" },
-                { "f": "Chilli", "n": "Heeler" },
-                { "f": "Bluey", "n": "Heeler" },
-                { "f": "Bingo", "n": "Heeler" }
-            ]
+            [ { "f": "Bandit", "n": "Heeler" },
+              { "f": "Chilli", "n": "Heeler" },
+              { "f": "Bluey", "n": "Heeler" },
+              { "f": "Bingo", "n": "Heeler" } ]
 """);
     }
 
