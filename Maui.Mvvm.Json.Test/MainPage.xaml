@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui.Mvvm.Json.Test.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Maui.Mvvm.Json.Test">
+
+    <Grid
+        x:DataType="local:MainPage"
+        BindingContext="{Binding Parent, Source={RelativeSource Self}}"
+        RowDefinitions="*,Auto">
+        <CollectionView Margin="10,10,10,10" ItemsSource="{Binding People}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:Person">
+                    <Label Text="{Binding FullName}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid
+            Grid.Row="1"
+            Margin="10,10,10,10"
+            ColumnDefinitions="Auto,Auto">
+            <Button
+                Margin="10,10,10,10"
+                Clicked="OnFlintstones"
+                Text="Flintstones" />
+            <Button
+                Grid.Column="1"
+                Margin="10,10,10,10"
+                Clicked="OnBluey"
+                Text="Bluey" />
+        </Grid>
+    </Grid>
+
+</ContentPage>
