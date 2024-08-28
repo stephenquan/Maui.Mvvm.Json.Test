@@ -59,10 +59,10 @@
 
 	<ItemGroup>
 		<!-- CommunityToolkit.Mvvm 8.2.2 works -->
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+		<!--<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />-->
 		
 		<!-- CommunityToolkit.Mvvm 8.3.0 with JsonPropertyName crashes on startup -->
-		<!--<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.0" />-->
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.0" />
 		
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
